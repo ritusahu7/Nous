@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>Online Risk Profile Result</title>
+</head>
+<body>
+<label>Risk Score Value : </label> <label id="riskScore" th:text="${riskProfile.score}"></label><br>
+<label>Risk Profile Name :</label> <label id="riskProfileName" th:text="${riskProfile.name}"></label><br>
+
+<a th:href="@{/summary}">Click here to see our Investment Recommendations</a><br>
+<a th:href="@{/home}">Go To Home page</a><br>
+<a th:href="@{/login}">Log Out</a><br>
+</body>
+</html>

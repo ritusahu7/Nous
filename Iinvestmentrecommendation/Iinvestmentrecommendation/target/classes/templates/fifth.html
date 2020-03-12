@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>Online Risk Profile Assessment Questionnaire</title>
+</head>
+<body>
+	<div id="errors">Please select an option to proceed.</div>
+
+	<label id="instruction">Please answer the following question by
+		choosing the appropriate option, and then click on Next.</label>
+	<br>
+	<label id="question">5.When I invest my money, I am: </label>
+	<br>
+	<form th:action="@{/fifth}" method="post">
+		<input type="radio" name="option" id="one" value="losing">Most concerned about my investment losing value <br> 
+		<input type="radio" name="option" id="two" value="losingorgaining">Equally concerned about my investment losing or gaining value<br>
+		<input type="radio" name="option" id="three" value="gaining">Most concerned about my investment gaining value <br> 
+		<input type="submit" value="SUBMIT" />
+	</form>
+
+	<a th:href="@{/fourth}">Back</a>
+	<br>
+	<a th:href="@{/sixth}">Next</a>
+	<br>
+	<a th:href="@{/sixth}">Submit</a>
+	<br>
+	<a th:href="@{/login}">Logout</a>
+	<br>
+</body>
+</html>

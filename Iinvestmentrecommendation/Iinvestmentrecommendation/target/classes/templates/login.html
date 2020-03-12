@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>Invest Online - Login</title>
+</head>
+<body>
+
+	<div id="errors" th:if="${param.error}">
+            Invalid Credentials.
+    </div> 
+    <form th:action="@{/login}" method="post">
+    	<h1>HTML page</h1>
+		<label>Username <input type="text" id="username" name="username"/> </label><br>
+		<label>Password <input type="password" id="password" name="password"/> </label><br>
+		<input type="submit" id="login" value="SUBMIT"/><br>
+	</form>
+</body>
+</html>

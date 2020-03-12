@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>Investment Recommendations</title>
+</head>
+<body>
+<div id="msg">
+           Please Complete Risk Profile Assessment.
+           <a  th:href="@{/home}">Go To Home page</a>
+</div>
+
+
+
+<label> Risk Profile:</label> <label id="riskProfileName" th:text="${riskProfile.name}"></label><br>
+<label>Recommendation:</label> <label id="investmentStrategyDesc" th:text="${riskProfile.strategy}"></label><br>
+<label>% Debt Recommendation:</label> <label id="debtRecommendationPercentage" th:text="${riskProfile.debtRecommendation}"></label><br>
+<label>% Equity Recommendation</label> <label id="equityRecommendationPercentage" th:text="${riskProfile.equityRecommendation}"></label><br>
+<a th:href="@{/home}">Go To Home page</a><br>
+<a th:href="@{/login}">Log Out</a><br>
+</body>
+</html>

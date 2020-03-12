@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>Online Risk Profile Assessment Questionnaire</title>
+
+</head>
+<body>
+
+	<div  id="errors" th:if="${#fields.hasErrors('${anualIncome.anualIncome}')}">Please select an option to proceed.</div>
+	
+	<label id="instruction">Please answer the following question by
+		choosing the appropriate option, and then click on Next.</label>
+	<br>
+	<label id="question">2. My annual income (in INR) is :</label>
+	<br>
+	<form th:action="@{/second}" th:object="${anualIncome}" method="post">
+		<input type="radio" name="option" id="one" value="lessthan1lakh" th:field="*{anualIncome}">100000<br> 
+		<input type="radio" name="option" id="two" value="1to5" th:field="*{anualIncome}">100000-500000<br> 
+		<input type="radio" name="option" id="three" value="5to10" th:field="*{anualIncome}">500000-1000000<br>
+		<input type="radio" name="option" id="four" value="10to30" th:field="*{anualIncome}">1000000-3000000<br> 
+		<input type="radio" name="option" id="five" value="greaterthan30" th:field="*{anualIncome}">3000000<br> 
+		<input type="submit" value="SUBMIT" />
+	</form>
+	<a href="javascript:history.back(1)">Back</a>
+	<br>
+	<a th:href="@{/third}">Next</a>
+	<br>
+	<a th:href="@{/third}">Submit</a>
+	<br>
+	<a th:href="@{/login}">Logout</a>
+	<br>
+</body>
+</html>

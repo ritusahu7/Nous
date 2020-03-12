@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!--  p th:text="'Hello, ' + ${investor} + '!'" />-->
+
+<a th:href="@{/summary}">Investment Recommendations</a><br>
+<a th:href="@{/questionnaire}">Risk Profile Assessment</a>
+
+<h2>Investor Details</h2>
+<label>Name: </label><label  id="investorName" th:text="${investor.name}"></label><br>
+<label>Email: </label><label  id="emailAddress" th:text="${investor.email}"></label><br>
+<label>Mobile: </label><label  id="mobilePhone" th:text="${investor.mobile}"></label><br>
+<label>Mobile: </label><label  id="mailingAddress" th:text="${investor.address}"></label><br>
+
+<a th:href="@{/login}">Log Out</a>
+</body>
+</html>

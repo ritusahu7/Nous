@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>Online Risk Profile Assessment Questionnaire</title>
+</head>
+<body>
+	<div id="errors" th:if="${#fields.hasErrors('${age.age}')}">Please select an option to proceed.</div>
+	
+	<label id="instruction">Please answer the following question by
+		choosing the appropriate option, and then click on Next.</label>
+	<br>
+	<label id="question">1. My age (in years) is : </label>
+	<br>
+	<form th:action="@{/questionnaire}" th:object="${age}" method="post">
+		
+		<input type="radio" name="option" id="one" value="lessthan18" th:field="*{age}">18<br>
+		<input type="radio" name="option" id="two" value="18-40" th:field="*{age}">18-40<br> 
+		<input type="radio" name="option" id="three"value="40-50" th:field="*{age}">40-50<br> 
+		<input type="radio" name="option" id="four" value="50-60" th:field="*{age}">50-60<br> 
+		<input type="radio" name="option" id="five" value="greaterthan60" th:field="*{age}">60<br> 
+		<input type="submit" value="SUBMIT" />
+	</form>
+	<a th:href="@{/second}">Next</a>
+	<br>
+	<a th:href="@{/second}">Submit</a>
+	<br>
+	<a th:href="@{/login}">Logout</a>
+	<br>
+</body>
+</html>
